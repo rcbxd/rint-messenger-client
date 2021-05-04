@@ -1,0 +1,12 @@
+{
+  "name": "RintExpo",
+  "displayName": "RintExpo",
+  "expo": {
+    "name": "RintExpo",
+    "slug": "RintExpo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
