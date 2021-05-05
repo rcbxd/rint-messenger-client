@@ -6,10 +6,10 @@ import Emoji from '../assets/img/Emoji.svg'
 export function Header() {
     return (
         <View style={styles.header}>
-            <View style={{flexDirection: 'row', alignItems:"center"}}>
+            <View style={{ flexDirection: 'row', alignItems: "center", height: 50 }}>
                 <Emoji />
-                <Text>  Ве </Text>
-                <Text>happy</Text>
+                <Text style={styles.titleBlack}> Ве </Text>
+                <Text style={styles.titleGrey}>happy</Text>
             </View>
             <View>
                 <Bell />
@@ -22,11 +22,22 @@ const styles = StyleSheet.create({
     header: {
         flex: 0,
         // backgroundColor:'red',
-        width:'100%',
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:"center",
-        padding:50,
-        height:120
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: "center",
+        padding: 50,
+        height: 120
     },
+    titleBlack: {
+        fontSize: 25,
+        fontFamily: "Proxima-Nova-Bold",
+        color: "#000000",
+        marginBottom: 2
+    },
+    titleGrey: {
+        fontSize: 25,
+        fontFamily: "Proxima-Nova-ExtraBold",
+        color: "#696969"
+    }
 });
