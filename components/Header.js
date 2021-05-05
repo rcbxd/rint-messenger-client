@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Bell from '../assets/img/Bell.svg'
-import Emoji from '../assets/img/Emoji.svg'
+import Bell from '../assets/img/header-icons/Bell.svg'
+import Emoji from '../assets/img/header-icons/Emoji.svg'
 
 export function Header() {
     return (
