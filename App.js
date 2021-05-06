@@ -8,8 +8,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import AppLoading from "expo-app-loading";
-
 import { colors } from "./utils/colors";
+import { MainApp } from "./components/MainApp";
+import { ChatScreen } from "./pages/ChatScreen";
 
 const Stack = createStackNavigator();
 
@@ -27,8 +28,6 @@ const styles = StyleSheet.create({
 });
 
 
-import { MainApp } from "./components/MainApp";
-import { Chat } from './components/Chat'
 export default function App() {
   let [fontsLoaded] = useFonts({
     'Proxima-Nova-Regular': require('./assets/fonts/Proxima-Nova-Regular.ttf'),
@@ -43,12 +42,12 @@ export default function App() {
         <View style={styles.container}>
           <StatusBar style="auto" />
           <NavigationContainer>
-          <Stack.Navigator screenOptions={{
-            headerShown: false
-          }}>
-            <Stack.Screen name="Home" component={MainApp} navig={navigator} />
-            <Stack.Screen name="Chat" component={Chat} />
-          </Stack.Navigator>
+            <Stack.Navigator screenOptions={{
+              headerShown: false
+            }}>
+              <Stack.Screen name="Home" component={MainApp} navig={navigator} />
+              <Stack.Screen name="Chat" component={ChatScreen} navigation={navigator} />
+            </Stack.Navigator>
           </NavigationContainer>
         </View>
       </SafeAreaView>

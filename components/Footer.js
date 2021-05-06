@@ -1,39 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import Search from "../assets/img/footer-icons/Search.svg";
 import Edit from "../assets/img/footer-icons/Edit.svg";
 import Document from "../assets/img/footer-icons/Document.svg";
 import Home from "../assets/img/footer-icons/Home.svg";
 
-export function Footer() {
+export function Footer(props) {
   return (
     <View style={styles.footer}>
 
-      <View style={styles.textNav}>
-        <Text style={styles.textNavText}>
-          Chat
-        </Text>
-        <View style={styles.textNavSelected}>
-
+      <TouchableOpacity onPress={() => { props.handler(0) }}>
+        <View style={styles.textNav}>
+          <Text style={styles.textNavText}>
+            Chat
+          </Text>
+          <View style={styles.textNavSelected} />
         </View>
-      </View>
+      </TouchableOpacity>
 
-      <View style={styles.iconNav}>
-        <Search />
-      </View>
+      <TouchableOpacity onPress={() => { props.handler(1) }}>
+        <View style={styles.iconNav}>
+          <Search style={styles.selectedIcon} />
+        </View>
+      </TouchableOpacity>
 
       <View style={styles.buttonIconNav}>
         <Edit />
       </View>
 
-      <View style={styles.iconNav}>
-        <Document />
-      </View>
+      <TouchableOpacity onPress={() => { props.handler(2) }}>
+        <View style={styles.iconNav}>
+          <Document />
+        </View>
+      </TouchableOpacity>
 
-      <View style={styles.iconNav}>
-        <Home />
-      </View>
+      <TouchableOpacity onPress={() => { props.handler(3) }}>
+        <View style={styles.iconNav}>
+          <Home />
+        </View>
+      </TouchableOpacity>
 
     </View>
   );
@@ -77,4 +83,7 @@ const styles = StyleSheet.create({
     width: 4,
     borderRadius: 50,
   },
+  selectedIcon: {
+    color: "#FD4E2C",
+  }
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { MessageListBox } from "../components/MessageListBox";
 import { Divider } from "../components/Divider";
 
@@ -47,7 +47,7 @@ export function MessagesScreen(props) {
     <ScrollView style={styles.messagesScreen}>
       {messages.map(m => (
         <View>
-          <MessageListBox msg={m} navig={props.navig} />
+          <MessageListBox msg={m} navigation={props.navigation} />
           <Divider />
         </View>
       ))}
