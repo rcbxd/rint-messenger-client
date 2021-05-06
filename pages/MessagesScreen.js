@@ -42,12 +42,12 @@ const messages = [
   }
 ]
 
-export function MessagesScreen() {
+export function MessagesScreen(props) {
   return (
     <ScrollView style={styles.messagesScreen}>
       {messages.map(m => (
         <View>
-          <MessageListBox msg={m} />
+          <MessageListBox msg={m} navig={props.navig} />
           <Divider />
         </View>
       ))}

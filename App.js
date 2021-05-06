@@ -2,11 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import { Header } from "./components/Header.js";
 import { Body } from "./components/Body.js"
 import React from 'react';
+import 'react-native-gesture-handler';
 import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import AppLoading from "expo-app-loading";
 
 import { colors } from "./utils/colors";
+
+const Stack = createStackNavigator();
 
 const styles = StyleSheet.create({
   droidSafeArea: {
@@ -21,8 +26,9 @@ const styles = StyleSheet.create({
   },
 });
 
-import { MainApp } from "./components/MainApp";
 
+import { MainApp } from "./components/MainApp";
+import { Chat } from './components/Chat'
 export default function App() {
   let [fontsLoaded] = useFonts({
     'Proxima-Nova-Regular': require('./assets/fonts/Proxima-Nova-Regular.ttf'),
@@ -36,7 +42,14 @@ export default function App() {
       <SafeAreaView style={styles.droidSafeArea}>
         <View style={styles.container}>
           <StatusBar style="auto" />
-          <MainApp />
+          <NavigationContainer>
+          <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
+            <Stack.Screen name="Home" component={MainApp} navig={navigator} />
+            <Stack.Screen name="Chat" component={Chat} />
+          </Stack.Navigator>
+          </NavigationContainer>
         </View>
       </SafeAreaView>
     );

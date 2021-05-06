@@ -1,18 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableOpacity  } from 'react-native';
 
 export function MessageListBox(props) {
   return (
-    <View style={styles.messageListBox}>
-      <Image source={props.msg.profilePicture} />
-      <View style={styles.messageContent}>
-        <Text style={styles.messageName}>{props.msg.name}</Text>
-        <Text style={styles.messageText}>{props.msg.text}</Text>
-      </View>
-      <View style={styles.messageTime}>
-        <Text style={styles.messageTimeText}>10:25 AM</Text>
-      </View>
-    </View>
+      <TouchableOpacity onPress={()=>{Alert.alert('b'); props.navig.navigate('Chat'); console.log(props.navig)}}>
+        <View style={styles.messageListBox} >
+          <Image source={props.msg.profilePicture} />
+          <View style={styles.messageContent}>
+            <Text style={styles.messageName}>{props.msg.name}</Text>
+            <Text style={styles.messageText}>{props.msg.text}</Text>
+          </View>
+          <View style={styles.messageTime}>
+            <Text style={styles.messageTimeText}>10:25 AM</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
   );
 }
 
