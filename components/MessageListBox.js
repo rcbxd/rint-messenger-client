@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from 'react-na
 
 export function MessageListBox(props) {
   return (
-    <TouchableOpacity onPress={() => { props.navigation.navigate("Chat") }}>
+    <TouchableOpacity onPress={() => { props.navigation.push("Chat") }}>
       <View style={styles.messageListBox} >
         <Image source={props.msg.profilePicture} />
         <View style={styles.messageContent}>

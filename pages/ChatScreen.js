@@ -6,7 +6,7 @@ import Message from '../components/Message'
 export function ChatScreen(props) {
   return (
     <View style={styles.body}>
-      <ChatHeader />
+      <ChatHeader navigation={props.navigation} />
       <ScrollView style={{ padding: 27 }}>
         <Message sound></Message>
         <Message reverse></Message>

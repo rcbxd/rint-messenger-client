@@ -45,7 +45,7 @@ export default function App() {
             <Stack.Navigator screenOptions={{
               headerShown: false
             }}>
-              <Stack.Screen name="Home" component={MainApp} navig={navigator} />
+              <Stack.Screen name="Home" component={MainApp} navigation={navigator} />
               <Stack.Screen name="Chat" component={ChatScreen} navigation={navigator} />
             </Stack.Navigator>
           </NavigationContainer>
